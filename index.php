@@ -1,4 +1,7 @@
 <?php
+if(isset($_POST["btn_registrar"])){
+    header('Location: registro.php');
+}
 
 ?>
 
@@ -21,7 +24,8 @@
         <input type="password">
         <br></br>
 
-        <input type="submit" value="INICIAR">
+        <input type="submit" value="INICIAR" name="btn_iniciar">
+        <input type="submit" value="REGISTRAR" name="btn_registrar">
     </form>
     
 </body>
