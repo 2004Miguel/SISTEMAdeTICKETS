@@ -1,4 +1,9 @@
 <?php
+include "db.php";
+$ob1=new database();
+$ob1->constructor();
+$ob1->conectar_db();
+
 if(isset($_POST["btn_registrar"])){
     header('Location: registro.php');
 }
