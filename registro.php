@@ -8,6 +8,11 @@ if(isset($_POST["return"])){
     header('Location: index.php');
 }
 
+if(isset($_POST["btn_registrar"])){
+    
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -22,16 +27,28 @@ if(isset($_POST["return"])){
     <h1>REGISTRO</h1>
     
     <form action="" method="post">
-        <label for="txt_userRegister">Ingrese su nombre o alías</label>
-        <input type="text" id="txt_userRegister" name="txt_userRegister">
+        <label for="txt_userRegister">Ingrese su <b>nombre</b> o alías por favor</label>
+        <input type="text" id="txt_userRegister" name="txt_userRegister" required>
         <br></br>
 
-        <label for="">Ingrese una constraseña segura</label>
-        <input type="text" id="txt_password" name="txt_password">
+        <label for="surname">Ingrese sus <b>apellidos</b> por favor</label>
+        <input type="text" name="surname" id="surname" required>
+        <br></br>
+
+        <label for="cargo">Insgrese su <b>cargo</b> por favor</label>
+        <input type="text" name="cargo" id="cargo" required>
+        <br></br>
+
+        <label for="email">Ingrese su <b>email</b> por favor</label>
+        <input type="email" name="email" id="email" required>
+        <br></br>
+
+        <label for="">Ingrese una <b>constraseña</b> segura</label>
+        <input type="text" id="txt_password" name="txt_password" required>
         <br></br>
 
         <input type="submit" name="btn_registrar" value="REGISTRAR">
-        <input type="submit" value="VOLVER" name="return">
+        <input type="submit" value="VOLVER" name="return" required>
     </form>
 
     
