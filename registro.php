@@ -14,7 +14,7 @@ if(isset($_POST["btn_registrar"])){
     $cargo=$_POST["cargo"];
     $email=$_POST["email"];
     $contrasena=$_POST["txt_password"];
-    $id=$_POST["iden"];
+    $id=$_POST["iden"]; 
 
     $ob2->registrar($apellido, $cargo, $contrasena, $email, $nombre, $id);
     

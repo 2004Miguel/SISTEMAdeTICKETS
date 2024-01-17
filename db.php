@@ -16,7 +16,7 @@ class database{
     public function conectar_db(){
         $this->con=mysqli_connect($this->server, $this->user, $this->password, $this->db);
 
-        if($con){
+        if($this->con){
             echo "CONEXIÓN EXITOSA";
         }else{
             echo "Error al conectar con la base de datos";
@@ -32,6 +32,7 @@ class database{
         }else{
             print("Error al registrar el usuario");
         }
+        mysqli_close($this->con);
 
 
     }
