@@ -8,6 +8,16 @@ if(isset($_POST["btn_registrar"])){
     header('Location: registro.php');
 }
 
+if(isset($_POST["btn_iniciar"])){
+    if($ob1->iniciar_sesion($_POST["user"], $_POST["password"])==1){
+        header("Location: informe_problemas.php");
+    }else{
+        print("El usuario o contraseña no son correctos");
+
+    }
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -22,11 +32,11 @@ if(isset($_POST["btn_registrar"])){
 
     <form action="" method="post">
         <label for="user">Usuario</label>
-        <input type="text" id="user">
+        <input type="text" id="user" name="user">
         <br></br>
 
         <label for="password">Contraseña</label>
-        <input type="password">
+        <input type="password" id="password" name="password">
         <br></br>
 
         <input type="submit" value="INICIAR" name="btn_iniciar">

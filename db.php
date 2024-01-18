@@ -46,6 +46,20 @@ class database{
         }
     }
 
+    public function iniciar_sesion($idpara, $passwordp){
+        $query="SELECT id_usuario, contrasena FROM usuario WHERE id_usuario='$idpara' AND contrasena='$passwordp'";
+        $resul=mysqli_query($this->con, $query);
+
+        if($resul->num_rows>0){
+            return 1;//id y contraseña son válidos
+        }else{
+            return 0;//id o contraseña no son válidos
+        }
+
+
+
+    }
+
 }
 
 ?>

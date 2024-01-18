@@ -24,7 +24,6 @@ if(isset($_POST["btn_registrar"])){
     
 }
 
-
 ?>
 
 <!DOCTYPE html>
