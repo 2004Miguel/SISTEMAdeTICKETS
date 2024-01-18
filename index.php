@@ -1,5 +1,7 @@
 <?php
+session_start();
 include "db.php";
+
 $ob1=new database();
 $ob1->constructor();
 $ob1->conectar_db();
@@ -7,6 +9,8 @@ $ob1->conectar_db();
 if(isset($_POST["btn_registrar"])){
     header('Location: registro.php');
 }
+
+$_SESSION["name_user"]=$_POST["user"];
 
 if(isset($_POST["btn_iniciar"])){
     if($ob1->iniciar_sesion($_POST["user"], $_POST["password"])==1){
