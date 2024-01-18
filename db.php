@@ -33,8 +33,17 @@ class database{
             print("Error al registrar el usuario");
         }
         mysqli_close($this->con);
+    }
 
+    public function verificr_registro($idpara){
+        $query="SELECT id_usuario FROM usuario WHERE id_usuario='$idpara'";
+        $resul=mysqli_query($this->con, $query);//mysqli_query devuelve un objeto de mysqli_result
 
+        if($resul->num_rows>0){//significa que ya está registrado
+            return 0;
+        }else{
+            return 1;//no está registrado
+        }
     }
 
 }

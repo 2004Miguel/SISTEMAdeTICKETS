@@ -16,7 +16,11 @@ if(isset($_POST["btn_registrar"])){
     $contrasena=$_POST["txt_password"];
     $id=$_POST["iden"]; 
 
-    $ob2->registrar($apellido, $cargo, $contrasena, $email, $nombre, $id);
+    if($ob2->verificr_registro($id)==1){//si la función devuelve 1, se registra, sino no. 
+        $ob2->registrar($apellido, $cargo, $contrasena, $email, $nombre, $id);
+    }else{
+        print("El id ya está asociado a otra cuenta");
+    }
     
 }
 
