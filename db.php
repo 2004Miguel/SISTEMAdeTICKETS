@@ -55,9 +55,19 @@ class database{
         }else{
             return 0;//id o contraseña no son válidos
         }
+    }
 
+    public function insert_problema($descripcionp){
+        $query="INSERT INTO problema (descripcion) VALUES ('$descripcionp')";
+        $con=mysqli_query($this->con, $query);
 
-
+        if($con){
+            print("Problema notificado");
+            return 1;//se registro el problema con exito
+        }else{
+            print("Error al notificar el problema");
+            return 0;//no se pudo registrar el problema
+        }
     }
 
 }

@@ -2,8 +2,19 @@
 session_start();
 include "db.php";
 
+$ob3=new database();
+$ob3->constructor();//Se declaran los datos necesarios para establecer conexion con la db
+$ob3->conectar_db();
+
 if(isset($_POST["back"])){
     header("Location: index.php");
+}
+
+if(isset($_POST["informar"])){
+    $problema=$_POST["problem"];
+    $id_person=$_SESSION["name_user"];
+
+    $ob3->insert_problema($problema);
 }
 
 ?>
@@ -19,7 +30,7 @@ if(isset($_POST["back"])){
     <h1>COMPLETA EL SIGUIENTE FORMULARIO PARA INFORMAR DEL PROBLEMA POR FAVOR</h1>
     <form action="" method="POST">
         <label for="descripcion">Descripción</label>
-        <textarea name="" id="" cols="110" rows="10"></textarea>
+        <textarea name="problem" id="" cols="110" rows="10" maxlength=500 spellcheck="true" placeholder="DESCRIPCIÓN DEL PROBLEMA(MÁXIMO 500 CARÁCTERES)"></textarea>
         <br></br>
 
         <label for="nombre">Nombre</label>
@@ -27,6 +38,7 @@ if(isset($_POST["back"])){
         <br></br>
 
         <input type="submit" name="back" value="VOLVER">
+        <input type="submit" name="informar" value="ENVIAR">
     </form>
 
     

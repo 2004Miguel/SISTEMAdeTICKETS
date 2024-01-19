@@ -40,7 +40,7 @@ if(isset($_POST["btn_iniciar"])){
         <br></br>
 
         <label for="password">Contraseña</label>
-        <input type="password" id="password" name="password">
+        <input type="password" id="password" name="password" autocomplete="new-password">
         <br></br>
 
         <input type="submit" value="INICIAR" name="btn_iniciar">
