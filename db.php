@@ -85,11 +85,16 @@ class database{
         }
     }
 
-    public function abrir_ticket(){
+    public function abrir_ticket($id_userp){
         $estado="abierto";
+        $obj=new database();
         $fecha_apertura=getdate();//Formato de fecha en mysql YYYY-MM-DD hh:mm:ss. hours minutes seconds 
-        print($fecha_apertura["year"]. "-". $fecha_apertura["mon"]. "-". $fecha_apertura["mday"]. "-". $fecha_apertura["hours"]. "-". $fecha_apertura["minutes"]. "-". $fecha_apertura["seconds"]);
-
+        //print($fecha_apertura["year"]. "-". $fecha_apertura["mon"]. "-". $fecha_apertura["mday"]. "-". $fecha_apertura["hours"]. "-". $fecha_apertura["minutes"]. "-". $fecha_apertura["seconds"]);
+        $fecha_cierre="0000-00-00 00:00:00";
+        $id_problema=$obj->ultimo_problema_registrado();
+        
+        $query="INSERT INTO ticket (estado, fecha_apertura, fecha_cierre, id_problema, id_usuario) 
+        VALUES ('$estado', '$fecha_apertura[year][mon][mday][hours][minutes][seconds]')";
     }
 
 }

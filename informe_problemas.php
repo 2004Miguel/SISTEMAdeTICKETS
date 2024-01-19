@@ -15,6 +15,8 @@ if(isset($_POST["informar"])){
     $id_person=$_SESSION["name_user"];
 
     //$ob3->abrir_ticket();
+    $fecha_apertura=getdate();
+    print($fecha_apertura["year"]["mon"]["mday"]["hours"]["minutes"]["seconds"]);
 
     if($ob3->insert_problema($problema)==1){
         $ob3->ultimo_problema_registrado();
