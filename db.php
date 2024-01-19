@@ -70,6 +70,23 @@ class database{
         }
     }
 
+    public function ultimo_problema_registrado(){
+        $query="SELECT id_problema FROM problema 
+        ORDER BY id_problema DESC
+        LIMIT 1";
+
+        $resul=mysqli_query($this->con, $query);
+        $row=$resul->fetch_array();
+
+        if($resul){
+            return $row[0];
+        }else{
+            print("Ocurrió un error");
+        }
+    }
+
+    
+
 }
 
 ?>
