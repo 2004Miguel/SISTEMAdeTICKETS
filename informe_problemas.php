@@ -14,9 +14,10 @@ if(isset($_POST["informar"])){
     $problema=$_POST["problem"];
     $id_person=$_SESSION["name_user"];
 
+    //$ob3->abrir_ticket();
+
     if($ob3->insert_problema($problema)==1){
         $ob3->ultimo_problema_registrado();
-
     }
 
 }

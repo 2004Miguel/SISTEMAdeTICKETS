@@ -85,7 +85,12 @@ class database{
         }
     }
 
-    
+    public function abrir_ticket(){
+        $estado="abierto";
+        $fecha_apertura=getdate();//Formato de fecha en mysql YYYY-MM-DD hh:mm:ss. hours minutes seconds 
+        print($fecha_apertura["year"]. "-". $fecha_apertura["mon"]. "-". $fecha_apertura["mday"]. "-". $fecha_apertura["hours"]. "-". $fecha_apertura["minutes"]. "-". $fecha_apertura["seconds"]);
+
+    }
 
 }
 
