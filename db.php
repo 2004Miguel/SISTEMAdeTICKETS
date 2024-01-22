@@ -85,18 +85,32 @@ class database{
         }
     }
 
-    public function abrir_ticket($id_userp){
+    public function abrir_ticket($id_userp, $id_problem){
         $estado="abierto";
-        $obj=new database();
         $fecha_apertura=getdate();//Formato de fecha en mysql YYYY-MM-DD hh:mm:ss. hours minutes seconds 
-        //print($fecha_apertura["year"]. "-". $fecha_apertura["mon"]. "-". $fecha_apertura["mday"]. "-". $fecha_apertura["hours"]. "-". $fecha_apertura["minutes"]. "-". $fecha_apertura["seconds"]);
-        $fecha_cierre="0000-00-00 00:00:00";
-        $id_problema=$obj->ultimo_problema_registrado();
+
+        $fecha =['anio'=>$fecha_apertura['year'], 
+        'mes'=>$fecha_apertura['mon'], 
+        'mesdia'=>$fecha_apertura["mday"], 
+        'hora'=>$fecha_apertura["hours"],
+        'minuto'=>$fecha_apertura["minutes"],
+        'segundo'=>$fecha_apertura["seconds"]
+        ];
+
+        $fechaf= implode($fecha);
         
-        $query="INSERT INTO ticket (estado, fecha_apertura, fecha_cierre, id_problema, id_usuario) 
-        VALUES ('$estado', '$fecha_apertura[year][mon][mday][hours][minutes][seconds]')";
+        
+        $query="INSERT INTO ticket (estado, fecha_apertura, id_problema, id_usuario) 
+        VALUES ('$estado', '$fechaf', '$id_problem', '$id_userp')";
+
+        
+        try{
+            $resul=mysqli_query($this->con, $query);
+
+        }catch(Exception $e){
+            echo "error: ",     $e->getMessage();
+
+        }
     }
-
 }
-
 ?>

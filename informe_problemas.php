@@ -6,20 +6,20 @@ $ob3=new database();
 $ob3->constructor();//Se declaran los datos necesarios para establecer conexion con la db
 $ob3->conectar_db();
 
+$fecha_apertura=getdate();//Formato de fecha en mysql YYYY-MM-DD hh:mm:ss. hours minutes seconds 
+
+
 if(isset($_POST["back"])){
     header("Location: index.php");
 }
 
 if(isset($_POST["informar"])){
-    $problema=$_POST["problem"];
-    $id_person=$_SESSION["name_user"];
-
-    //$ob3->abrir_ticket();
-    $fecha_apertura=getdate();
-    print($fecha_apertura["year"]["mon"]["mday"]["hours"]["minutes"]["seconds"]);
-
-    if($ob3->insert_problema($problema)==1){
-        $ob3->ultimo_problema_registrado();
+    $problema=$_POST["problem"];//se guarda la descripción del problema
+    $id_person=$_SESSION["name_user"];//se guarda el id del usuario
+    
+    if($ob3->insert_problema($problema)==1){//se inserta el problema. Si se inserta correctamente devuelve 1 sino 0. 
+        $id_problem=$ob3->ultimo_problema_registrado();//se obtiene el id del último problema registrado para abrir el ticket
+        $ob3->abrir_ticket($id_person, $id_problem);//se inserta el tiquet
     }
 
 }
