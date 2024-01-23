@@ -19,7 +19,7 @@ if(isset($_POST["informar"])){
     
     if($ob3->insert_problema($problema)==1){//se inserta el problema. Si se inserta correctamente devuelve 1 sino 0. 
         $id_problem=$ob3->ultimo_problema_registrado();//se obtiene el id del último problema registrado para abrir el ticket
-        $ob3->abrir_ticket($id_person, $id_problem);//se inserta el tiquet
+        //$ob3->abrir_ticket($id_person);//se inserta el tiquet
     }
 
 }
@@ -37,7 +37,7 @@ if(isset($_POST["informar"])){
     <h1>COMPLETA EL SIGUIENTE FORMULARIO PARA INFORMAR DEL PROBLEMA POR FAVOR</h1>
     <form action="" method="POST">
         <label for="descripcion">Descripción</label>
-        <textarea name="problem" id="" cols="110" rows="10" maxlength=500 spellcheck="true" placeholder="DESCRIPCIÓN DEL PROBLEMA(MÁXIMO 500 CARÁCTERES)"></textarea>
+        <textarea name="problem" id="descripcion" cols="110" rows="10" maxlength=500 spellcheck="true" placeholder="DESCRIPCIÓN DEL PROBLEMA(MÁXIMO 500 CARÁCTERES)"></textarea>
         <br></br>
 
         <label for="nombre">Nombre</label>

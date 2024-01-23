@@ -79,14 +79,16 @@ class database{
         $row=$resul->fetch_array();
 
         if($resul){
+            //echo $row[0];   
             return $row[0];
         }else{
             print("Ocurrió un error");
         }
     }
 
-    public function abrir_ticket($id_userp, $id_problem){
+    public function abrir_ticket($id_userp){
         $estado="abierto";
+        $problema=25;
         $fecha_apertura=getdate();//Formato de fecha en mysql YYYY-MM-DD hh:mm:ss. hours minutes seconds 
 
         $fecha =['anio'=>$fecha_apertura['year'], 
@@ -100,17 +102,14 @@ class database{
         $fechaf= implode($fecha);
         
         
-        $query="INSERT INTO ticket (estado, fecha_apertura, id_problema, id_usuario) 
-        VALUES ('$estado', '$fechaf', '$id_problem', '$id_userp')";
+        /*$query="INSERT INTO ticket (estado, fecha_apertura, id_problema, id_usuario) 
+        VALUES ('$estado', '$fechaf', '$id_problem', '$id_userp')";*/
 
+        $query="INSERT INTO ticket (id_usuario, id_problema, estado, fecha_apertura) 
+        VALUES ('$id_userp', '$problema', '$estado', '$fechaf')";
         
-        try{
-            $resul=mysqli_query($this->con, $query);
-
-        }catch(Exception $e){
-            echo "error: ",     $e->getMessage();
-
-        }
+        $resul=mysqli_query($this->con, $query);
+        echo mysqli_errno($resul);
     }
 }
 ?>
