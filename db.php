@@ -17,7 +17,7 @@ class database{
         $this->con=mysqli_connect($this->server, $this->user, $this->password, $this->db);
 
         if($this->con){
-            echo "CONEXIÓN EXITOSA";
+            //echo "CONEXIÓN EXITOSA";
         }else{
             echo "Error al conectar con la base de datos";
         }
@@ -86,27 +86,6 @@ class database{
         }
     }
 
-    public function abrir_ticket($id_userp, $id_pro, $fechaa){
-        $estado="abierto";
-        $fecha_apertura=getdate();//Formato de fecha en mysql YYYY-MM-DD hh:mm:ss. hours minutes seconds 
-        /*
-        $fecha =['anio'=>$fecha_apertura['year'], 
-        'mes'=>$fecha_apertura['mon'], 
-        'mesdia'=>$fecha_apertura["mday"], 
-        'hora'=>$fecha_apertura["hours"],
-        'minuto'=>$fecha_apertura["minutes"],
-        'segundo'=>$fecha_apertura["seconds"]
-        ];
-
-        $fechaf= implode($fecha);*/
-
-
-        $query="INSERT INTO ticket (estado, fecha_apertura, id_problema, id_usuario) 
-        VALUES ('$estado', '$fechaa', '$id_pro', '$id_userp')";
-        
-        $resul=mysqli_query($this->con, $query);
-    }
-
     public function fecha_actual(){
         $consulta="SELECT NOW()";
         $result=mysqli_query($this->con, $consulta);
@@ -114,5 +93,15 @@ class database{
 
         return $row[0];
     }
+
+    public function abrir_ticket($id_userp, $id_pro, $fechaa){
+        $estado="abierto";
+    
+        $query="INSERT INTO ticket (estado, fecha_apertura, id_problema, id_usuario) 
+        VALUES ('$estado', '$fechaa', '$id_pro', '$id_userp')";
+        
+        $resul=mysqli_query($this->con, $query);
+    }
+
 }
 ?>
