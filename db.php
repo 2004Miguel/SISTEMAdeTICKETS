@@ -86,11 +86,10 @@ class database{
         }
     }
 
-    public function abrir_ticket($id_userp){
+    public function abrir_ticket($id_userp, $id_pro, $fechaa){
         $estado="abierto";
-        $problema=25;
         $fecha_apertura=getdate();//Formato de fecha en mysql YYYY-MM-DD hh:mm:ss. hours minutes seconds 
-
+        /*
         $fecha =['anio'=>$fecha_apertura['year'], 
         'mes'=>$fecha_apertura['mon'], 
         'mesdia'=>$fecha_apertura["mday"], 
@@ -99,17 +98,21 @@ class database{
         'segundo'=>$fecha_apertura["seconds"]
         ];
 
-        $fechaf= implode($fecha);
-        
-        
-        /*$query="INSERT INTO ticket (estado, fecha_apertura, id_problema, id_usuario) 
-        VALUES ('$estado', '$fechaf', '$id_problem', '$id_userp')";*/
+        $fechaf= implode($fecha);*/
 
-        $query="INSERT INTO ticket (id_usuario, id_problema, estado, fecha_apertura) 
-        VALUES ('$id_userp', '$problema', '$estado', '$fechaf')";
+
+        $query="INSERT INTO ticket (estado, fecha_apertura, id_problema, id_usuario) 
+        VALUES ('$estado', '$fechaa', '$id_pro', '$id_userp')";
         
         $resul=mysqli_query($this->con, $query);
-        echo mysqli_errno($resul);
+    }
+
+    public function fecha_actual(){
+        $consulta="SELECT NOW()";
+        $result=mysqli_query($this->con, $consulta);
+        $row=mysqli_fetch_row($result);
+
+        return $row[0];
     }
 }
 ?>

@@ -19,10 +19,13 @@ if(isset($_POST["informar"])){
     
     if($ob3->insert_problema($problema)==1){//se inserta el problema. Si se inserta correctamente devuelve 1 sino 0. 
         $id_problem=$ob3->ultimo_problema_registrado();//se obtiene el id del último problema registrado para abrir el ticket
-        //$ob3->abrir_ticket($id_person);//se inserta el tiquet
-    }
 
-}
+        if($id_problem != 0){
+            $date=$ob3->fecha_actual();
+            $ob3->abrir_ticket($id_person, $id_problem, $date);//se inserta el tiquet
+        }
+    }
+}   
 
 ?>
 

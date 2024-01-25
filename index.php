@@ -22,6 +22,10 @@ if(isset($_POST["btn_iniciar"])){
 
 }
 
+if(isset($_POST["evidence"])){
+    header("Location: prueba.php"); 
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -45,6 +49,7 @@ if(isset($_POST["btn_iniciar"])){
 
         <input type="submit" value="INICIAR" name="btn_iniciar">
         <input type="submit" value="REGISTRAR" name="btn_registrar">
+        <input type="submit" value="PRUEBAS" name="evidence">
     </form>
     
 </body>
