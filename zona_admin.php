@@ -10,6 +10,12 @@
 </head>
 <body>
     <h1>BIEN VENIDO ADMINISTRADOR</h1>
+
+    <form action="" method="post">
+        <input type="submit" value="VER TICKETS">
+        <input type="submit" value="CERRAR TICKETS">
+        <input type="submit" value="CERRAR SESIÓN">
+    </form>
     
 </body>
 </html>

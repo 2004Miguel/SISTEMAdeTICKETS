@@ -14,12 +14,15 @@ $_SESSION["name_user"]=$_POST["user"];
 
 if(isset($_POST["btn_iniciar"])){
     if($ob1->iniciar_sesion($_POST["user"], $_POST["password"])==1){
-        header("Location: informe_problemas.php");
+        if($_POST["user"]==123 & $_POST["password"]=="nomelase"){
+            header("Location: zona_admin.php");
+
+        }else{
+            header("Location: informe_problemas.php");
+        }
     }else{
         print("El usuario o contraseña no son correctos");
-
     }
-
 }
 
 if(isset($_POST["evidence"])){
