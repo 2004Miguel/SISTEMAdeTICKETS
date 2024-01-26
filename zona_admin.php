@@ -1,4 +1,7 @@
 <?php
+if(isset($_POST["volver"])){
+    header("Location: index.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -10,11 +13,14 @@
 </head>
 <body>
     <h1>BIEN VENIDO ADMINISTRADOR</h1>
+    <h2>Elija que quiere hacer</h2>
 
     <form action="" method="post">
         <input type="submit" value="VER TICKETS">
+        <br></br>
         <input type="submit" value="CERRAR TICKETS">
-        <input type="submit" value="CERRAR SESIÓN">
+        <br></br>
+        <input type="submit" value="CERRAR SESIÓN" name="volver">
     </form>
     
 </body>
