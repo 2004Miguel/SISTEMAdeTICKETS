@@ -29,7 +29,11 @@ if(isset($_POST["informar"])){
             $ob3->abrir_ticket($id_person, $id_problem, $date);//se inserta el tiquet
         }
     }
-}   
+}
+
+if(isset($_POST["verTickets"])){
+    $ob3->verTicketsAbiertos($_SESSION["name_user"]);
+}
 
 ?>
 
@@ -52,6 +56,7 @@ if(isset($_POST["informar"])){
         <br></br>
 
         <input type="submit" name="back" value="VOLVER">
+        <input type="submit" name="verTickets" value="VER TICKETS">
         <input type="submit" name="informar" value="ENVIAR">
     </form>
 

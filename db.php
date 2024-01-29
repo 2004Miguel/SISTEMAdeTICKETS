@@ -103,5 +103,28 @@ class database{
         $resul=mysqli_query($this->con, $query);
     }
 
+    public function verTicketsAbiertos($id_user){
+        
+        $estado = "abierto";
+        $query = "SELECT * FROM ticket WHERE id_usuario='$id_user' AND estado='$estado'";
+        $resul = mysqli_query($this->con, $query);
+
+        
+        while($row = mysqli_fetch_row($resul)){
+            print $row[0];
+            print " ";
+            print $row[1];
+            print " ";
+            print $row[2];
+            print " ";
+            print $row[3];
+            print " ";
+            print $row[4];
+            print " ";
+            print $row[5];
+            print " ";
+            echo "<br></br>";
+        }
+    }
 }
 ?>
