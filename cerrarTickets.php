@@ -1,4 +1,11 @@
 <?php
+include ("db.php");
+
+$cerrar_tickets = new database();
+$cerrar_tickets->constructor();
+$cerrar_tickets->conectar_db();
+
+
 
 ?>
 
