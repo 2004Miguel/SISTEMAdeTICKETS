@@ -2,6 +2,10 @@
 if(isset($_POST["volver"])){
     header("Location: index.php");
 }
+
+if(isset($_POST["openTicket"])){
+    header("Location: informe_problemas.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +23,8 @@ if(isset($_POST["volver"])){
         <input type="submit" value="VER TICKETS">
         <br></br>
         <input type="submit" value="CERRAR TICKETS">
+        <br></br>
+        <input type="submit" value="ABRIR TICKET" name="openTicket">
         <br></br>
         <input type="submit" value="CERRAR SESIÓN" name="volver">
     </form>

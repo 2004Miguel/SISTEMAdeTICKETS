@@ -10,7 +10,11 @@ $fecha_apertura=getdate();//Formato de fecha en mysql YYYY-MM-DD hh:mm:ss. hours
 
 
 if(isset($_POST["back"])){
-    header("Location: index.php");
+    if($_SESSION["name_user"] == 123){
+        header("Location: zona_admin.php");
+    }else{
+        header("Location: index.php");
+    }
 }
 
 if(isset($_POST["informar"])){
