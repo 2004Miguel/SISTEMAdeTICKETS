@@ -106,7 +106,13 @@ class database{
     public function verTicketsAbiertos($id_user){
         
         $estado = "abierto";
-        $query = "SELECT * FROM ticket WHERE id_usuario='$id_user' AND estado='$estado'";
+        if($id_user != 123){
+            $query = "SELECT * FROM ticket WHERE id_usuario='$id_user' AND estado='$estado'";
+
+        }else{
+            $query = "SELECT * FROM ticket WHERE estado='$estado'";
+
+        }
         $resul = mysqli_query($this->con, $query);
 
         

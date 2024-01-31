@@ -1,3 +1,10 @@
+<?php
+if(isset($_POST{"regresar"})){
+    header("Location: zona_admin.php");
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +14,11 @@
 </head>
 <body>
     <h1>ZONA DE TICKETS</h1>
+
+    <form action="" method="post">
+        <input type="submit" value="VOLVER" name="regresar">
+
+    </form>
     
 </body>
 </html>

@@ -1,4 +1,10 @@
 <?php
+include "db.php";
+
+$admin = new database();
+$admin->constructor();
+$admin->conectar_db();
+
 if(isset($_POST["volver"])){
     header("Location: index.php");
 }
@@ -8,7 +14,9 @@ if(isset($_POST["openTicket"])){
 }
 
 if(isset($_POST["verTickets"])){
-    header("Location: ver_tickets.php");
+    //header("Location: ver_tickets.php");
+    $admin->verTicketsAbiertos($_SESSION["name_user"]);
+
 }
 ?>
 
