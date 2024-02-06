@@ -14,8 +14,8 @@ if(isset($_POST["openTicket"])){
 }
 
 if(isset($_POST["verTickets"])){
-    //header("Location: ver_tickets.php");
-    $admin->verTicketsAbiertos($_SESSION["name_user"]);
+    header("Location: ver_tickets.php");
+    //$admin->verTicketsAbiertos($_SESSION["name_user"]);
 
 }
 ?>
