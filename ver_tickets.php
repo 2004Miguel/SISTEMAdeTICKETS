@@ -1,4 +1,8 @@
 <?php
+$obAdmin = new database();
+$obAdmin->constructor();
+$obAdmin->conectar_db();
+
 if(isset($_POST{"regresar"})){
     header("Location: zona_admin.php");
 }
