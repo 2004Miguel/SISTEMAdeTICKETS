@@ -32,11 +32,15 @@ if(isset($_POST["btn_registrar"])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REGISTRO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
 </head>
 <body>
 
     <h1>REGISTRO</h1>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!--
     <form action="" method="post">
         <label for="txt_userRegister">Ingrese su <b>nombre</b> o alías por favor</label>
         <input type="text" id="txt_userRegister" name="txt_userRegister" autocomplete="name" >
@@ -64,6 +68,43 @@ if(isset($_POST["btn_registrar"])){
 
         <input type="submit" name="btn_registrar" value="REGISTRAR">
         <input type="submit" value="VOLVER" name="return" >
+    </form>
+    -->
+    <form class="row g-3" method="POST">
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Ingrese su nombre o alias por favor</label>
+            <input type="text" class="form-control" id="inputEmail4" name="txt_userRegister">
+        </div>
+
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Ingrese sus apellidos por favor</label>
+            <input type="text" class="form-control" id="inputPassword4" name="surname">
+        </div>
+
+        <div class="col-12">
+            <label for="inputAddress" class="form-label">Ingrese su cargo por favor</label>
+            <input type="text" class="form-control" id="inputAddress" name="cargo">
+        </div>
+
+        <div class="col-12">
+            <label for="inputAddress2" class="form-label">Ingrese su Email por favor</label>
+            <input type="email" class="form-control" id="inputAddress2" name="email">
+        </div>
+
+        <div class="col-md-6">
+            <label for="inputCity" class="form-label">Ingrese su identificación por favor</label>
+            <input type="number" class="form-control" id="inputCity" name="iden">
+        </div>
+
+        <div class="col-md-2">
+            <label for="inputZip" class="form-label">Cree una contraseña segura</label>
+            <input type="password" class="form-control" id="inputZip" name="txt_password">
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary" name="btn_registrar">Registrar</button>
+            <button type="submit" class="btn btn-primary" name="return">Volver</button>
+        </div>
     </form>
 
     
