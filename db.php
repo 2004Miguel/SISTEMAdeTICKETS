@@ -104,7 +104,7 @@ class database{
     }
 
     public function verTicketsAbiertos($id_user){
-        
+        /*
         $estado = "abierto";
         if($id_user != 123){
             $query = "SELECT * FROM ticket WHERE id_usuario='$id_user' AND estado='$estado'";
@@ -130,7 +130,9 @@ class database{
             print $row[5];
             print " ";
             echo "<br></br>";
-        }
+        }*/
+
+        
     }
 }
 ?>

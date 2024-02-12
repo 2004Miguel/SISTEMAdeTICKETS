@@ -24,16 +24,31 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <?php
+                include "db.php";
+                $obVerTickets = new database();
+                $obVerTickets->constructor();
+                $obVerTickets->conectar_db();//el resultado es conexion exitosa
+
+                
+                $datos = mysqli_query("SELECT * FROM ticket");
+                while($datos->fetch_object($datos)){ ?>
+                    <tr>
                     <th scope="row">1</th>
                     <td>Mark</td>
                     <td>Otto</td>
                     <td>@mdo</td>
                     <td>quien</td>
+                    <td>algo</td>
+                    <td>algo</td>
                     <td>
                         <a href="" class="btn btn-small btn-danger"><i class="fa-solid fa-xmark"></i></a>
                     </td>
                 </tr>
+            
+                <?php }
+                ?>
+                
             </tbody>
         </table>
     </div>
