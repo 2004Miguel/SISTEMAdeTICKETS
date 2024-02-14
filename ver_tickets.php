@@ -28,11 +28,13 @@
                 include "db.php";
                 $obVerTickets = new database();
                 $obVerTickets->constructor();
-                $obVerTickets->conectar_db();//el resultado es conexion exitosa
+                $obVerTickets->conectar_db();
+
+                $query = "SELECT * FROM ticket";
+                $resul = mysqli_query($obVerTickets->con, $query);
 
                 
-                $datos = mysqli_query("SELECT * FROM ticket");
-                while($datos->fetch_object($datos)){ ?>
+                while($datos = $resul->fetch_object()){ ?>
                     <tr>
                     <th scope="row">1</th>
                     <td>Mark</td>

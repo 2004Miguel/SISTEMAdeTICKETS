@@ -5,6 +5,7 @@ class database{
     public $user;
     public $password;
     public $db;
+    public $con;
 
     public function constructor(){
         $this->server="localhost";
@@ -17,7 +18,7 @@ class database{
         $this->con=mysqli_connect($this->server, $this->user, $this->password, $this->db);
 
         if($this->con){
-            //echo "CONEXIÓN EXITOSA";
+            echo "CONEXIÓN EXITOSA";
         }else{
             echo "Error al conectar con la base de datos";
         }
@@ -130,9 +131,9 @@ class database{
             print $row[5];
             print " ";
             echo "<br></br>";
-        }*/
-
-        
+        }*/        
     }
+
+    
 }
 ?>
