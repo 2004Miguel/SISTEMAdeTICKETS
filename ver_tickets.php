@@ -15,12 +15,13 @@
         <table class="table">
             <thead class="table-primary">
                 <tr>
+                    <th scope="col">Id ticket</th>
+                    <th scope="col">Id usuario</th>
+                    <th scope="col">Id problema</th>
                     <th scope="col">Estado</th>
                     <th scope="col">Fecha de apertura</th>
                     <th scope="col">Fecha de cierre</th>
-                    <th scope="col">Problema</th>
-                    <th scope="col">Trabajador</th>
-                    <th scope="col">Opciones</th>
+                    <th scope="col">Pulse para cerrar el ticket</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,13 +37,13 @@
                 
                 while($datos = $resul->fetch_object()){ ?>
                     <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>quien</td>
-                    <td>algo</td>
-                    <td>algo</td>
+                    <!--<th scope="row">1</th> -->
+                    <td><?= $datos->id_ticket?></td>
+                    <td><?= $datos->id_usuario?></td>
+                    <td><?= $datos->id_problema?></td>
+                    <td><?= $datos->estado?></td>
+                    <td><?= $datos->fecha_apertura?></td>
+                    <td><?= $datos->fecha_cierre?></td>
                     <td>
                         <a href="" class="btn btn-small btn-danger"><i class="fa-solid fa-xmark"></i></a>
                     </td>
