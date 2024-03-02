@@ -77,7 +77,7 @@ if(isset($_POST["verTickets"])){
         <br></br>
 
         <button type="submit" class="btn btn-primary" name="back">Volver</button>
-        <button type="submit" name="verTickets" class="btn btn-primary">Ver Tickets</button>
+        <!--<button type="submit" name="verTickets" class="btn btn-primary">Ver Tickets</button> -->
         <button type="submit" name="informar" class="btn btn-primary" value="ENVIAR">Enviar</button>
     </form>
     
