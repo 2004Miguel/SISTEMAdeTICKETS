@@ -49,22 +49,6 @@ if(isset($_POST["verTickets"])){
 <body>
     <h1>COMPLETA EL SIGUIENTE FORMULARIO PARA INFORMAR DEL PROBLEMA POR FAVOR</h1>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
-    <!--
-    <form action="" method="POST">
-        <label for="descripcion">Descripción</label>
-        <textarea name="problem" id="descripcion" cols="110" rows="10" maxlength=500 spellcheck="true" placeholder="DESCRIPCIÓN DEL PROBLEMA(MÁXIMO 500 CARÁCTERES)"></textarea>
-        <br></br>
-
-        <label for="nombre">Nombre</label>
-        <input type="text" name="nombre" id="nombre" value= /*echo $_SESSION["name_user"]*/ ?> readonly>
-        <br></br>
-
-        <input type="submit" name="back" value="VOLVER">
-        <input type="submit" name="verTickets" value="VER TICKETS">
-        <input type="submit" name="informar" value="ENVIAR">
-    </form>
-    -->
     
     <form action="" method="post">
         <div class="mb-3">
