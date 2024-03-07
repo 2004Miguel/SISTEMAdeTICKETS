@@ -134,9 +134,9 @@ class database{
         }*/        
     }
 
-    public function cerrarTicket($id_ticketp){
+    public function cerrarTicket($id_ticketp, $fecha_cierrep){
         $estado = "cerrado";
-        $query="UPDATE ticket SET estado='$estado' WHERE id_ticket='$id_ticketp'";
+        $query="UPDATE ticket SET estado='$estado', fecha_cierre='$fecha_cierrep' WHERE id_ticket='$id_ticketp'";
         $resul=mysqli_query($this->con, $query);
         if($resul == true){
             print("Ticket cerrado");
