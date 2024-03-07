@@ -17,7 +17,7 @@ if(isset($_POST["regresar"])){
 <body>
     <h1>ZONA DE TICKETS</h1>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
+    
     <div class="col-8 p-4">
         <table class="table">
             <thead class="table-primary">
@@ -34,6 +34,7 @@ if(isset($_POST["regresar"])){
             <tbody>
                 <?php
                 include "db.php";
+                include "cerrarTicket.php";
                 $obVerTickets = new database();
                 $obVerTickets->constructor();
                 $obVerTickets->conectar_db();
@@ -52,7 +53,7 @@ if(isset($_POST["regresar"])){
                     <td><?= $datos->fecha_apertura?></td>
                     <td><?= $datos->fecha_cierre?></td>
                     <td>
-                        <a href="" class="btn btn-small btn-danger"><i class="fa-solid fa-xmark"></i></a>
+                        <a href="ver_tickets.php?idTicket=<?= $datos->id_ticket ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-xmark"></i></a>
                     </td>
                 </tr>
             

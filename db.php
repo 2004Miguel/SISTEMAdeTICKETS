@@ -134,6 +134,17 @@ class database{
         }*/        
     }
 
+    public function cerrarTicket($id_ticketp){
+        $estado = "cerrado";
+        $query="UPDATE ticket SET estado='$estado' WHERE id_ticket='$id_ticketp'";
+        $resul=mysqli_query($this->con, $query);
+        if($resul == true){
+            print("Ticket cerrado");
+        }else{
+            print("error al cerrar el ticket");
+        }
+    }
+
     
 }
 ?>
