@@ -29,6 +29,7 @@ if(isset($_POST["regresar"])){
                     <th scope="col">Fecha de apertura</th>
                     <th scope="col">Fecha de cierre</th>
                     <th scope="col">Pulse para cerrar el ticket</th>
+                    <th scope="col">Pulse para ver detalles del ticket</th>
                 </tr>
             </thead>
             <tbody>
@@ -54,6 +55,9 @@ if(isset($_POST["regresar"])){
                     <td><?= $datos->fecha_cierre?></td>
                     <td>
                         <a href="ver_tickets.php?idTicket=<?= $datos->id_ticket ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-xmark"></i></a>
+                    </td>
+                    <td>
+                        <a href="detalleTicket.php?idTicket=<?= $datos->id_ticket ?>"><i class="fa-solid fa-circle-info"></i></a>
                     </td>
                 </tr>
             
