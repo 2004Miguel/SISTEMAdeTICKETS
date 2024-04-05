@@ -36,6 +36,7 @@ if(isset($_POST["regresar"])){
                 <?php
                 include "db.php";
                 include "cerrarTicket.php";
+                //include "detalleTicket.php";
                 $obVerTickets = new database();
                 $obVerTickets->constructor();
                 $obVerTickets->conectar_db();
@@ -57,7 +58,7 @@ if(isset($_POST["regresar"])){
                         <a href="ver_tickets.php?idTicket=<?= $datos->id_ticket ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-xmark"></i></a>
                     </td>
                     <td>
-                        <a href="detalleTicket.php?idTicket=<?= $datos->id_ticket ?>"><i class="fa-solid fa-circle-info"></i></a>
+                        <a href="detalleTicket.php?idTicket=<?= $datos->id_ticket?>&idUser=<?=$datos->id_usuario?>&idProblema=<?= $datos->id_problema ?>"><i class="fa-solid fa-circle-info"></i></a>
                     </td>
                 </tr>
             

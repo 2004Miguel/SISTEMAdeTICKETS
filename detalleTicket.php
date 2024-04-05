@@ -1,4 +1,13 @@
 <?php
+include "db.php";
+$obTicket = new database();
+$obTicket->constructor();
+$obTicket->conectar_db();
+
+$id_ticket = $_GET['idTicket'];
+$id_usuario = $_GET["idUser"];
+$id_problema = $_GET["idProblema"];
+$nombre = $obTicket->nombreUsuario($id_usuario); 
 
 ?>
 
@@ -18,7 +27,7 @@
     <form class="row g-3">
         <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Creador del ticket</label>
-            <input type="text" class="form-control" id="inputEmail4">
+            <input type="text" class="form-control" id="inputEmail4" value="<?php echo $nombre[0] . " " . $nombre[1]; ?>" />
         </div>
         <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Cargo</label>
