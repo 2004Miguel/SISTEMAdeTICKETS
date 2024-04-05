@@ -7,7 +7,8 @@ $obTicket->conectar_db();
 $id_ticket = $_GET['idTicket'];
 $id_usuario = $_GET["idUser"];
 $id_problema = $_GET["idProblema"];
-$nombre = $obTicket->nombreUsuario($id_usuario); 
+$nombre = $obTicket->datosUsuario($id_usuario); 
+$problem = $obTicket->descripcionProblema($id_problema);
 
 ?>
 
@@ -31,15 +32,15 @@ $nombre = $obTicket->nombreUsuario($id_usuario);
         </div>
         <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Cargo</label>
-            <input type="text" class="form-control" id="inputPassword4">
+            <input type="text" class="form-control" id="inputPassword4" value="<?php echo $nombre[2] ?>">
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputAddress" placeholder="ejemplo@algo.com">
+            <input type="email" class="form-control" id="inputAddress" value="<?php echo $nombre[3] ?>">
         </div>
         <div class="col-md-6">
             <label for="inputCity" class="form-label">Descripción del problema</label>
-            <input type="text" class="form-control" id="inputCity">
+            <input type="text" class="form-control" id="inputCity" value="<?php echo $problem[0] ?>">
         </div>
         <div class="col-12">
             <button type="button" class="btn btn-warning"><a href="ver_tickets.php">Volver</a></button>

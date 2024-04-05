@@ -145,15 +145,23 @@ class database{
         }
     }
 
-    public function nombreUsuario($id_user){
-        $query = "SELECT nombre, apellido FROM usuario WHERE id_usuario='$id_user'";
+    public function datosUsuario($id_user){
+        $query = "SELECT nombre, apellido, cargo, email FROM usuario WHERE id_usuario='$id_user'";
         $exe=mysqli_query($this->con, $query);
         $resul = mysqli_fetch_row($exe);
         //echo $resul[0];
         //echo $resul[1];
         return $resul;
-        
     }
+
+    public function descripcionProblema($id_problema){
+        $query = "SELECT descripcion FROM problema WHERE id_problema='$id_problema'";
+        $exe = mysqli_query($this->con, $query);
+        $resul = mysqli_fetch_row($exe);
+        return $resul;
+    }
+
+
 
     
 }
